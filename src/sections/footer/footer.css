@@ -1,0 +1,1155 @@
+/* =========================================================
+   1. FOOTER FOUNDATION
+========================================================= */
+.wave-footer {
+    --wf-bg: #080d18;
+    --wf-surface: #0c1423;
+    --wf-accent: #22d3ee;
+    --wf-accent-bright: #67e8f9;
+    --wf-purple: #a78bfa;
+    --wf-text: #e5edf7;
+    --wf-text-soft: #aebbd0;
+    --wf-text-muted: #8998ad;
+    --wf-border: rgba(148, 163, 184, 0.14);
+    --wf-font-heading: "Space Grotesk", sans-serif;
+    --wf-font-body: "Inter", sans-serif;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: var(--wf-text);
+    background: var(--wf-bg);
+    font-family: var(--wf-font-body);
+    line-height: 1.6;
+}
+
+.wave-footer *,
+.wave-signature * {
+    box-sizing: border-box;
+}
+
+.wave-footer a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wave-footer a:focus-visible {
+    outline: 2px solid var(--wf-accent-bright);
+    outline-offset: 5px;
+}
+
+.wave-footer__main,
+.wave-footer__bottom {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================================
+   2. FOOTER ATMOSPHERE
+========================================================= */
+.wave-footer__atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.wave-footer__glow {
+    position: absolute;
+    width: 420px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.wave-footer__glow--cyan {
+    top: 8%;
+    right: -180px;
+    background: var(--wf-accent);
+}
+
+.wave-footer__glow--purple {
+    top: 48%;
+    left: -220px;
+    background: var(--wf-purple);
+    opacity: 0.09;
+}
+
+.wave-footer__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            rgba(148, 163, 184, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.035) 1px,
+            transparent 1px
+        );
+    background-size: 56px 56px;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000 12%,
+        #000 82%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        #000 12%,
+        #000 82%,
+        transparent
+    );
+    opacity: 0.65;
+}
+
+/* =========================================================
+   3. SIGNATURE EXPERIENCE
+========================================================= */
+.wave-signature {
+    --signature-cyan: #22d3ee;
+    --signature-blue: #60a5fa;
+    --signature-purple: #a78bfa;
+    --signature-text: #f1f5f9;
+    --signature-muted: #94a3b8;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 650px;
+    margin: 0;
+    padding: 100px 32px 48px;
+    text-align: center;
+    /* Seamlessly blend into the footer */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.wave-signature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(34, 211, 238, 0.8),
+        rgba(167, 139, 250, 0.6),
+        transparent
+    );
+    pointer-events: none;
+}
+
+/* =========================================================
+   4. SIGNATURE ATMOSPHERE
+========================================================= */
+.wave-signature__atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.wave-signature__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            rgba(148, 163, 184, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.055) 1px,
+            transparent 1px
+        );
+    background-size: 58px 58px;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 25%,
+        #000 75%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 25%,
+        #000 75%,
+        transparent 100%
+    );
+    opacity: 0.55;
+}
+
+.wave-signature__glow {
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    filter: blur(115px);
+    opacity: 0.16;
+    animation: signatureGlowFloat 12s ease-in-out infinite alternate;
+}
+
+.wave-signature__glow--cyan {
+    top: 8%;
+    left: 8%;
+    background: var(--signature-cyan);
+}
+
+.wave-signature__glow--purple {
+    right: 5%;
+    bottom: 0;
+    background: var(--signature-purple);
+    animation-delay: -6s;
+}
+
+@keyframes signatureGlowFloat {
+    from {
+        transform: translate3d(-18px, -12px, 0) scale(0.95);
+    }
+    to {
+        transform: translate3d(28px, 20px, 0) scale(1.08);
+    }
+}
+
+/* =========================================================
+   5. FLOWING DIGITAL WAVE
+========================================================= */
+.wave-signature__wave {
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    width: 110%;
+    height: 380px;
+    transform: translateY(-50%);
+    overflow: visible;
+    opacity: 0.66;
+}
+
+.wave-signature__wave-line {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 0;
+    animation: signatureWaveFlow 16s linear infinite;
+}
+
+.wave-signature__wave-line--glow {
+    opacity: 0.55;
+    stroke-width: 18;
+}
+
+.wave-signature__wave-line--secondary {
+    opacity: 0.5;
+    animation-duration: 22s;
+    animation-direction: reverse;
+}
+
+@keyframes signatureWaveFlow {
+    to {
+        stroke-dashoffset: -2400;
+    }
+}
+
+.wave-signature__particles {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(103, 232, 249, 0.8) 1px,
+            transparent 1.8px
+        ),
+        radial-gradient(
+            circle,
+            rgba(167, 139, 250, 0.65) 1px,
+            transparent 1.8px
+        );
+
+    background-size: 137px 137px, 193px 193px;
+    background-position: 0 0, 70px 40px;
+    opacity: 0.22;
+    animation: signatureParticleDrift 30s linear infinite;
+}
+
+@keyframes signatureParticleDrift {
+    from {
+        background-position: 0 0, 70px 40px;
+    }
+    to {
+        background-position: 137px -137px, -123px 233px;
+    }
+}
+
+/* =========================================================
+   6. SIGNATURE CONTENT
+========================================================= */
+.wave-signature__content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1100px);
+    margin-inline: auto;
+}
+
+/* Eyebrow */
+.wave-signature__eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 36px;
+    font-family: var(--wf-font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.wave-signature__status-dot {
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--signature-cyan);
+    box-shadow:
+        0 0 8px rgba(34, 211, 238, 0.85),
+        0 0 18px rgba(34, 211, 238, 0.4);
+}
+
+.wave-signature__eyebrow-divider {
+    width: 28px;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.45);
+}
+
+.wave-signature__eyebrow-caption {
+    color: var(--signature-muted);
+}
+
+/* =========================================================
+   7. OVERSIZED HEADLINE
+========================================================= */
+.wave-signature__headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    font-family: var(--wf-font-heading);
+    font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.12;
+    color: var(--signature-text);
+    text-wrap: balance;
+}
+
+.wave-signature__headline-line {
+    display: block;
+    max-width: 100%;
+}
+
+.wave-signature__headline-line--accent {
+    color: transparent;
+    background: linear-gradient(
+        100deg,
+        #bae6fd 0%,
+        #67e8f9 30%,
+        #22d3ee 60%,
+        #a5b4fc 100%
+    );
+    background-size: 180% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: signatureTextShimmer 12s ease-in-out infinite alternate;
+}
+
+.wave-signature__period {
+    color: var(--signature-cyan);
+    -webkit-text-fill-color: var(--signature-cyan);
+}
+
+@keyframes signatureTextShimmer {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: 100% center;
+    }
+}
+
+/* =========================================================
+   8. DESCRIPTION
+========================================================= */
+.wave-signature__description {
+    max-width: 590px;
+    margin: 30px auto 0;
+    font-family: var(--wf-font-body);
+    font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: -0.015em;
+    color: #aebbd0;
+    text-wrap: balance;
+}
+
+.wave-signature__description span {
+    display: block;
+    margin-top: 2px;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* =========================================================
+   9. SIGNATURE ACTIONS
+========================================================= */
+.wave-signature__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 38px;
+}
+
+.wave-signature__button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: 58px;
+    padding: 0 25px;
+    overflow: hidden;
+    border: 1px solid rgba(103, 232, 249, 0.65);
+    border-radius: 5px;
+    background: linear-gradient(
+        110deg,
+        #0891b2,
+        #06b6d4 55%,
+        #22d3ee
+    );
+    color: #04121b;
+    font-size: 0.77rem;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+    text-decoration: none;
+    box-shadow:
+        0 0 0 1px rgba(34, 211, 238, 0.08),
+        0 8px 32px rgba(6, 182, 212, 0.13);
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease,
+        border-color 250ms ease;
+}
+
+.wave-signature__button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    transform: skewX(-25deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transition: left 600ms ease;
+}
+
+.wave-signature__button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 24px rgba(34, 211, 238, 0.2),
+        0 14px 40px rgba(6, 182, 212, 0.2);
+}
+
+.wave-signature__button:hover::before {
+    left: 150%;
+}
+
+.wave-signature__button:focus-visible {
+    outline: 2px solid #e0f2fe;
+    outline-offset: 5px;
+}
+
+.wave-signature__button-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    transition: transform 250ms ease;
+}
+
+.wave-signature__button:hover .wave-signature__button-icon {
+    transform: translate(3px, -3px);
+}
+
+/* Secondary link */
+.wave-signature__secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #cbd5e1;
+    font-size: 0.88rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.wave-signature__secondary-link span {
+    color: var(--signature-cyan);
+    transition: transform 200ms ease;
+}
+
+.wave-signature__secondary-link:hover {
+    color: #fff;
+}
+
+.wave-signature__secondary-link:hover span {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   10. SIGNATURE FOOTNOTE
+========================================================= */
+.wave-signature__bottom-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 78px;
+    color: #718096;
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.19em;
+}
+
+.wave-signature__bottom-line {
+    width: 46px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(34, 211, 238, 0.8),
+        transparent
+    );
+}
+
+/* =========================================================
+   11. MAIN FOOTER GRID
+========================================================= */
+.wave-footer__main {
+    padding: 82px 24px 76px;
+}
+
+.wave-footer__container {
+    display: grid;
+    grid-template-columns:
+        minmax(240px, 1.45fr)
+        repeat(2, minmax(150px, 0.85fr))
+        minmax(220px, 1.1fr);
+    gap: 48px;
+    width: min(1240px, 100%);
+    margin-inline: auto;
+}
+
+/* =========================================================
+   12. BRAND AND LOGO
+========================================================= */
+.wave-footer__brand {
+    min-width: 0;
+}
+
+.wave-footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--wf-text);
+    text-decoration: none;
+}
+
+.wave-footer__logo-mark {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(34, 211, 238, 0.27);
+    border-radius: 14px;
+    color: var(--wf-accent-bright);
+    background: linear-gradient(
+        145deg,
+        rgba(34, 211, 238, 0.12),
+        rgba(167, 139, 250, 0.07)
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition:
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        transform 220ms ease;
+}
+
+.wave-footer__logo-mark svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.wave-footer__logo:hover .wave-footer__logo-mark {
+    border-color: rgba(34, 211, 238, 0.65);
+    box-shadow:
+        0 0 24px rgba(34, 211, 238, 0.13);
+    transform: translateY(-2px);
+}
+
+.wave-footer__logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.wave-footer__logo-text strong {
+    font-family: var(--wf-font-heading);
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+}
+
+.wave-footer__logo-text > span {
+    margin-top: 5px;
+    color: #9baac0;
+    font-size: 0.59rem;
+    font-weight: 500;
+    letter-spacing: 0.19em;
+}
+
+.wave-footer__brand-description {
+    max-width: 330px;
+    margin: 25px 0 22px;
+    color: var(--wf-text-soft);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+.wave-footer__brand-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--wf-text-soft);
+    font-size: 0.81rem;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+}
+
+/* =========================================================
+   13. FOOTER NAVIGATION
+========================================================= */
+.wave-footer__column {
+    min-width: 0;
+}
+
+.wave-footer__column-title {
+    position: relative;
+    margin: 0 0 25px;
+    padding-bottom: 14px;
+    color: var(--wf-text);
+    font-family: var(--wf-font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.wave-footer__column-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--wf-accent),
+        rgba(34, 211, 238, 0.12)
+    );
+}
+
+.wave-footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wave-footer__links a {
+    display: inline-block;
+    color: #b4c0d0;
+    line-height: 1.6;
+    text-decoration: none;
+    font-family: var(--wf-font-body);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    transition:
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.wave-footer__links a:hover {
+    color: var(--wf-accent-bright);
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   14. CONTACT COLUMN
+========================================================= */
+.wave-footer__contact-description {
+    margin: 0 0 21px;
+    color: var(--wf-text-soft);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+.wave-footer__contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 15px;
+    color: #bdc8d8;
+    font-size: 0.87rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-decoration: none;
+    transition:
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.wave-footer__contact-link:hover {
+    color: var(--wf-accent-bright);
+    transform: translateX(3px);
+}
+
+.wave-footer__contact-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 37px;
+    height: 37px;
+    border: 1px solid var(--wf-border);
+    border-radius: 10px;
+    color: var(--wf-accent);
+    background: rgba(15, 23, 42, 0.65);
+    transition:
+        border-color 200ms ease,
+        background 200ms ease;
+}
+
+.wave-footer__contact-icon svg {
+    display: block;
+    width: 19px;
+    height: 19px;
+}
+
+.wave-footer__contact-link:hover .wave-footer__contact-icon {
+    border-color: rgba(34, 211, 238, 0.4);
+    background: rgba(34, 211, 238, 0.07);
+}
+
+/* =========================================================
+   15. COPYRIGHT BASELINE
+========================================================= */
+.wave-footer__bottom {
+    border-top: 1px solid var(--wf-border);
+    background: rgba(3, 7, 15, 0.38);
+}
+
+.wave-footer__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: min(1240px, calc(100% - 48px));
+    min-height: 78px;
+    margin-inline: auto;
+}
+
+.wave-footer__copyright {
+    margin: 0;
+    color: #aebbd0;
+    line-height: 1.7;
+    font-family: var(--wf-font-body);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.wave-footer__back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #bdc8d8;
+    font-size: 0.82rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition:
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.wave-footer__back-to-top svg {
+    width: 17px;
+    height: 17px;
+    color: var(--wf-accent);
+}
+
+.wave-footer__back-to-top:hover {
+    color: var(--wf-accent-bright);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   16. SCROLL REVEAL
+========================================================= */
+.wave-footer.footer-reveal-ready .wave-footer__main,
+.wave-footer.footer-reveal-ready .wave-footer__bottom {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 700ms cubic-bezier(0.2, 0.7, 0.25, 1),
+        transform 700ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+.wave-footer.footer-reveal-ready.is-footer-visible .wave-footer__main,
+.wave-footer.footer-reveal-ready.is-footer-visible .wave-footer__bottom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wave-footer.footer-reveal-ready .wave-footer__bottom {
+    transition-delay: 100ms;
+}
+
+/* =========================================================
+   17. LIGHT THEME
+========================================================= */
+html[data-theme="light"] .wave-footer,
+body.light-mode .wave-footer,
+body.light-theme .wave-footer {
+    --wf-bg: #f5f8fc;
+    --wf-surface: #fff;
+    --wf-text: #142033;
+    --wf-text-soft: #526176;
+    --wf-text-muted: #66758a;
+    --wf-border: rgba(51, 65, 85, 0.13);
+    color: var(--wf-text);
+    background: var(--wf-bg);
+}
+
+html[data-theme="light"] .wave-signature,
+body.light-mode .wave-signature,
+body.light-theme .wave-signature {
+    --signature-text: #122033;
+    --signature-muted: #5b6b80;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+html[data-theme="light"] .wave-signature__eyebrow,
+body.light-mode .wave-signature__eyebrow,
+body.light-theme .wave-signature__eyebrow {
+    color: #334155;
+}
+
+html[data-theme="light"] .wave-signature__description,
+body.light-mode .wave-signature__description,
+body.light-theme .wave-signature__description {
+    color: #526176;
+}
+
+html[data-theme="light"] .wave-signature__description span,
+body.light-mode .wave-signature__description span,
+body.light-theme .wave-signature__description span {
+    color: #334155;
+}
+
+html[data-theme="light"] .wave-signature__secondary-link,
+body.light-mode .wave-signature__secondary-link,
+body.light-theme .wave-signature__secondary-link {
+    color: #334155;
+}
+
+html[data-theme="light"] .wave-signature__secondary-link:hover,
+body.light-mode .wave-signature__secondary-link:hover,
+body.light-theme .wave-signature__secondary-link:hover {
+    color: #0891b2;
+}
+
+html[data-theme="light"] .wave-signature__bottom-label,
+body.light-mode .wave-signature__bottom-label,
+body.light-theme .wave-signature__bottom-label {
+    color: #64748b;
+}
+
+html[data-theme="light"] .wave-footer__logo,
+body.light-mode .wave-footer__logo,
+body.light-theme .wave-footer__logo {
+    color: #142033;
+}
+
+html[data-theme="light"] .wave-footer__logo-text > span,
+body.light-mode .wave-footer__logo-text > span,
+body.light-theme .wave-footer__logo-text > span {
+    color: #526176;
+}
+
+html[data-theme="light"] .wave-footer__links a,
+body.light-mode .wave-footer__links a,
+body.light-theme .wave-footer__links a,
+html[data-theme="light"] .wave-footer__brand-description,
+body.light-mode .wave-footer__brand-description,
+body.light-theme .wave-footer__brand-description,
+html[data-theme="light"] .wave-footer__contact-description,
+body.light-mode .wave-footer__contact-description,
+body.light-theme .wave-footer__contact-description,
+html[data-theme="light"] .wave-footer__contact-link,
+body.light-mode .wave-footer__contact-link,
+body.light-theme .wave-footer__contact-link,
+html[data-theme="light"] .wave-footer__copyright,
+body.light-mode .wave-footer__copyright,
+body.light-theme .wave-footer__copyright,
+html[data-theme="light"] .wave-footer__brand-status,
+body.light-mode .wave-footer__brand-status,
+body.light-theme .wave-footer__brand-status,
+html[data-theme="light"] .wave-footer__back-to-top,
+body.light-mode .wave-footer__back-to-top,
+body.light-theme .wave-footer__back-to-top {
+    color: #526176;
+}
+
+html[data-theme="light"] .wave-footer__contact-icon,
+body.light-mode .wave-footer__contact-icon,
+body.light-theme .wave-footer__contact-icon {
+    background: rgba(8, 145, 178, 0.055);
+}
+
+html[data-theme="light"] .wave-footer__bottom,
+body.light-mode .wave-footer__bottom,
+body.light-theme .wave-footer__bottom {
+    background: rgba(226, 232, 240, 0.35);
+}
+
+/* =========================================================
+   18. TABLET LAYOUT
+========================================================= */
+@media (max-width: 1100px) {
+    .wave-footer__container {
+        grid-template-columns:
+            minmax(220px, 1.2fr)
+            repeat(2, minmax(150px, 1fr));
+        gap: 44px 34px;
+    }
+
+    .wave-footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .wave-footer__brand-description {
+        max-width: 520px;
+    }
+}
+
+/* =========================================================
+   19. MOBILE LAYOUT
+========================================================= */
+@media (max-width: 768px) {
+    .wave-signature {
+        width: 100%;
+        min-height: 580px;
+        margin: 0;
+        padding: 82px 24px 38px;
+        border-radius: 0;
+    }
+
+    .wave-signature__headline {
+        font-size: clamp(2.5rem, 8.5vw, 4.5rem);
+        letter-spacing: -0.065em;
+    }
+
+    .wave-signature__eyebrow {
+        gap: 9px;
+        margin-bottom: 30px;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+    }
+
+    .wave-signature__description {
+        margin-top: 24px;
+    }
+
+    .wave-signature__actions {
+        gap: 22px;
+        margin-top: 32px;
+    }
+
+    .wave-signature__bottom-label {
+        margin-top: 62px;
+        font-size: 0.57rem;
+        letter-spacing: 0.12em;
+    }
+
+    .wave-signature__wave {
+        height: 300px;
+    }
+
+    .wave-footer__main {
+        padding: 62px 24px 55px;
+    }
+
+    .wave-footer__container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 45px 28px;
+    }
+
+    .wave-footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .wave-footer__column-title {
+        margin-bottom: 21px;
+    }
+
+    .wave-footer__bottom-inner {
+        width: calc(100% - 40px);
+        min-height: 90px;
+    }
+}
+
+/* =========================================================
+   20. SMALL PHONES
+========================================================= */
+@media (max-width: 480px) {
+    .wave-signature {
+        width: 100%;
+        min-height: 540px;
+        margin: 0;
+        padding: 70px 18px 30px;
+        border-radius: 0;
+    }
+
+    .wave-signature__headline {
+        font-size: clamp(2.1rem, 9.5vw, 3.2rem);
+        letter-spacing: -0.06em;
+        line-height: 1.12;
+    }
+
+    .wave-signature__headline-line {
+        overflow-wrap: anywhere;
+    }
+
+    .wave-signature__eyebrow-caption {
+        flex-basis: 100%;
+    }
+
+    .wave-signature__eyebrow-divider {
+        display: none;
+    }
+
+    .wave-signature__actions {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .wave-signature__button {
+        width: 100%;
+        max-width: 310px;
+        min-height: 56px;
+    }
+
+    .wave-signature__bottom-label {
+        gap: 9px;
+        margin-top: 52px;
+        font-size: 0.55rem;
+        letter-spacing: 0.08em;
+    }
+
+    .wave-signature__bottom-line {
+        width: 25px;
+        flex: 0 0 25px;
+    }
+
+    .wave-footer__container {
+        gap: 39px 20px;
+    }
+
+    .wave-footer__logo-text strong {
+        font-size: 1.45rem;
+    }
+
+    .wave-footer__logo-mark {
+        width: 43px;
+        height: 43px;
+    }
+
+    .wave-footer__logo-mark svg {
+        width: 29px;
+        height: 29px;
+    }
+
+    .wave-footer__bottom-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 9px;
+        padding-block: 20px;
+    }
+}
+
+/* =========================================================
+   21. ACCESSIBILITY
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    .wave-footer *,
+    .wave-footer *::before,
+    .wave-footer *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .wave-footer.footer-reveal-ready .wave-footer__main,
+    .wave-footer.footer-reveal-ready .wave-footer__bottom {
+        opacity: 1;
+        transform: none;
+    }
+}

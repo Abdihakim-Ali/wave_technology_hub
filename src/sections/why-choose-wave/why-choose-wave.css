@@ -503,9 +503,9 @@ body.light-theme .why-choose-wave {
     background: var(--wcw-background);
 }
 
-html[data-theme="light"] .why-choose-wave__grid,
-body.light-mode .why-choose-wave__grid,
-body.light-theme .why-choose-wave__grid {
+html[data-theme="light"] .why-choose-wave__background-grid,
+body.light-mode .why-choose-wave__background-grid,
+body.light-theme .why-choose-wave__background-grid {
     background-image:
         linear-gradient(
             rgba(15, 23, 42, 0.035) 1px,
