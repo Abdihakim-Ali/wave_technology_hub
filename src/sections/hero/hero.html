@@ -8,50 +8,28 @@
 <!-- =========================DIGITAL WAVE TERRAIN ========================== -->
         <div class="digital-wave-field">
             <svg
-                class="digital-wave-svg"
-                viewBox="0 0 1600 360"
-                preserveAspectRatio="none"
-            >
+                class="digital-wave-svg" viewBox="0 0 1600 360" preserveAspectRatio="none">
                 <defs>
-
                     <!-- CYAN GRADIENT -->
 
-                    <linearGradient
-                        id="waveCyan"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                    >
-
+                    <linearGradient id="waveCyan" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop
-                            offset="0%"
-                            stop-color="#00c8ff"
-                            stop-opacity="0"
+                            offset="0%" stop-color="#00c8ff" stop-opacity="0"
+                        />
+                        <stop
+                            offset="25%" stop-color="#00c8ff" stop-opacity="0.7"
                         />
 
                         <stop
-                            offset="25%"
-                            stop-color="#00c8ff"
-                            stop-opacity="0.7"
+                            offset="50%" stop-color="#00c8ff" stop-opacity="0.9"
                         />
 
                         <stop
-                            offset="50%"
-                            stop-color="#00c8ff"
-                            stop-opacity="0.9"
+                            offset="75%" stop-color="#00c8ff" stop-opacity="0.7"
                         />
 
                         <stop
-                            offset="75%"
-                            stop-color="#00c8ff"
-                            stop-opacity="0.7"
-                        />
-
-                        <stop
-                            offset="100%"
-                            stop-color="#00c8ff"
-                            stop-opacity="0"
+                            offset="100%" stop-color="#00c8ff" stop-opacity="0"
                         />
 
                     </linearGradient>
@@ -59,41 +37,26 @@
                     <!-- PURPLE GRADIENT -->
 
                     <linearGradient
-                        id="wavePurple"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
+                        id="wavePurple"x1="0%" y1="0%" x2="100%" y2="0%"
                     >
-
                         <stop
-                            offset="0%"
-                            stop-color="#8b5cf6"
-                            stop-opacity="0"
+                            offset="0%" stop-color="#8b5cf6" stop-opacity="0"
                         />
 
                         <stop
-                            offset="30%"
-                            stop-color="#8b5cf6"
-                            stop-opacity="0.5"
+                            offset="30%" stop-color="#8b5cf6" stop-opacity="0.5"
                         />
 
                         <stop
-                            offset="50%"
-                            stop-color="#8b5cf6"
-                            stop-opacity="0.8"
+                            offset="50%"  stop-color="#8b5cf6"  stop-opacity="0.8"
                         />
 
                         <stop
-                            offset="70%"
-                            stop-color="#8b5cf6"
-                            stop-opacity="0.5"
+                            offset="70%" stop-color="#8b5cf6" stop-opacity="0.5"
                         />
 
                         <stop
-                            offset="100%"
-                            stop-color="#8b5cf6"
-                            stop-opacity="0"
+                            offset="100%"  stop-color="#8b5cf6"  stop-opacity="0"
                         />
 
                     </linearGradient>
@@ -101,16 +64,11 @@
                     <!-- WAVE GLOW -->
 
                     <filter id="waveGlow">
-                        <feGaussianBlur
-                            stdDeviation="2.5"
-                            result="blur"
+                        <feGaussianBlur stdDeviation="2.5" result="blur"
                         />
                         <feMerge>
-
                             <feMergeNode in="blur"></feMergeNode>
-
                             <feMergeNode in="SourceGraphic"></feMergeNode>
-
                         </feMerge>
                     </filter>
                 </defs>
@@ -119,11 +77,8 @@
                      CYAN WAVES
                 ========================== -->
                 <g
-                    class="wave-layer wave-layer-cyan"
-                    fill="none"
-                    filter="url(#waveGlow)"
+                    class="wave-layer wave-layer-cyan" fill="none" filter="url(#waveGlow)"
                 >
-
                     <path
                         d="M-100 230
                            C100 170, 220 285, 400 220
@@ -171,11 +126,8 @@
                 ========================== -->
 
                 <g
-                    class="wave-layer wave-layer-purple"
-                    fill="none"
-                    filter="url(#waveGlow)"
+                    class="wave-layer wave-layer-purple" fill="none" filter="url(#waveGlow)"
                 >
-
                     <path
                         d="M-100 245
                            C100 315, 260 190, 450 250
@@ -251,7 +203,6 @@
             </h1>
 <!-- =========================DESCRIPTION========================== -->
                  
-            
             <p class="hero-description reveal reveal-delay-3">
                 <span class="description-line">
                     Connectivity. Computing. Gaming. IT solutions.

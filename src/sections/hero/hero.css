@@ -36,8 +36,8 @@
     z-index: 2;
     display: grid;
     grid-template-columns:
-        minmax(0, 0.92fr)
-        minmax(520px, 1.08fr);
+        minmax(0, 1fr)
+        minmax(0, 1fr);
     align-items: center;
     gap: 40px;
     width: 100%;
@@ -313,7 +313,8 @@
 
 .hero-title span {
     position: relative;
-    display: inline-block;
+    display: block;
+    white-space: nowrap;
     margin-top: 6px;
     padding-right: 8px;
     background:

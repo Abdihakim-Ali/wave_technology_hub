@@ -12,6 +12,8 @@
 
 import { defineConfig } from "vite";
 
-export default defineConfig({
-    base: process.env.VITE_BASE || "/wave_technology_hub/"
-});
+export default defineConfig(({ command }) => ({
+    base: command === "build"
+        ? process.env.VITE_BASE || "/wave_technology_hub/"
+        : "/"
+}));
