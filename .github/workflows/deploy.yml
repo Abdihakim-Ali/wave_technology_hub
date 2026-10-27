@@ -35,7 +35,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /WAVE-CYBER-CAFE/
+          VITE_BASE: /wave_technology_hub/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
